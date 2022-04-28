@@ -6,10 +6,16 @@ The kit includes all the basic building blocks to get started with React and Nod
 
 Includes the following:
 
-    * [Express](https://expressjs.com/)
-    * [React](https://reactjs.com/)
-    * [Storybook](https://storybook.js.org/)
-    * [TypeScript](https://www.typescriptlang.org/)
-    * [Morgan](https://)
-    * [Jest](https://jestjs.io/)
-    * [Sequelize](https://sequelize.org/)
+[Express](https://expressjs.com/) - Node.js Framework
+
+[Jest](https://jestjs.io/) - Unit testing framework
+
+[Morgan](https://github.com/expressjs/morgan#readme) - Logger
+
+[React](https://reactjs.com/) - Frontend framework
+
+[Sequelize](https://sequelize.org/) - ORM (Object Relational Mapper)
+
+[Storybook](https://storybook.js.org/) - UI component library
+
+[TypeScript](https://www.typescriptlang.org/) - TypeScript compiler
