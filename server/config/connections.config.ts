@@ -1,0 +1,46 @@
+import { ENV } from './environment.config'
+
+export const Database = {
+	local: {
+		name: 'local',
+		host: 'localhost',
+		username: 'server-connection-user',
+		password: '',
+		database: 'build_db',
+		dialect: 'postgres',
+		schema: 'shard_interview',
+		port: 5432
+	},
+	development: {
+		name: 'development',
+		host: 'localhost',
+		username: 'server-connection-user',
+		password: '',
+		database: 'build_db',
+		dialect: 'postgres',
+		schema: 'shard_interview',
+		port: 5432
+	},
+	testing: {
+		name: 'testing',
+		host: 'localhost',
+		username: 'server-connection-user',
+		password: '',
+		database: 'build_db',
+		dialect: 'postgres',
+		schema: 'shard_interview',
+		port: 5432
+	},
+	production: {
+		name: 'production',
+		host: 'localhost',
+		username: 'server-connection-user',
+		password: '',
+		database: 'build_db',
+		dialect: 'postgres',
+		schema: 'shard_interview',
+		port: 5432
+	}
+}
+
+export const Connection = Database[ENV.name]

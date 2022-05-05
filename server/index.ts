@@ -1,4 +1,5 @@
 import bodyParser from 'body-parser'
+import { db } from './config/database.config'
 import cors from 'cors'
 import express from 'express'
 import morgan from 'morgan'
@@ -35,6 +36,16 @@ app.get('/', function (req, res) {
 		})
 		.status(200)
 })
+
+/* -------------------------------------------------------------------------- */
+/*                           Connect to the Database                          */
+/* -------------------------------------------------------------------------- */
+try {
+	db.authenticate()
+	console.log('Connection has been established successfully.')
+} catch (error) {
+	console.error('Unable to connect to the database:', error)
+}
 
 /* -------------------------------------------------------------------------- */
 /*                              Initialize Server                            */
