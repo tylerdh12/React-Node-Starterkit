@@ -15,7 +15,7 @@ app.use(
 	cors({
 		origin: whitelistDomains,
 		methods: ['GET', 'PUT', 'POST', 'DELETE'],
-		credentials: true
+		credentials: false
 	})
 )
 app.use(morgan('dev'))
@@ -40,6 +40,16 @@ app.get('/', function (req, res) {
 /* -------------------------------------------------------------------------- */
 /*                           Connect to the Database                          */
 /* -------------------------------------------------------------------------- */
+
+const databaseSync = async () => {
+	try {
+		await db.sync({ alter: true })
+		console.log('All models have synced successfully')
+	} catch (error) {
+		console.error(`An error has occurred while syncing the database: `, error)
+	}
+}
+
 try {
 	db.authenticate()
 	console.log('Connection has been established successfully.')
@@ -50,6 +60,7 @@ try {
 /* -------------------------------------------------------------------------- */
 /*                              Initialize Server                            */
 /* -------------------------------------------------------------------------- */
-app.listen(3000, function () {
+app.listen(3000, async function () {
+	await databaseSync()
 	console.log('Server started on port: 3000')
 })

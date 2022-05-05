@@ -1,46 +1,7 @@
+import path from 'path'
 import { ENV } from './environment.config'
+const ConnectionOptions = require(path.resolve(__dirname, `./connections.json`))
 
-export const Database = {
-	local: {
-		name: 'local',
-		host: 'localhost',
-		username: 'server-connection-user',
-		password: '',
-		database: 'build_db',
-		dialect: 'postgres',
-		schema: 'shard_interview',
-		port: 5432
-	},
-	development: {
-		name: 'development',
-		host: 'localhost',
-		username: 'server-connection-user',
-		password: '',
-		database: 'build_db',
-		dialect: 'postgres',
-		schema: 'shard_interview',
-		port: 5432
-	},
-	testing: {
-		name: 'testing',
-		host: 'localhost',
-		username: 'server-connection-user',
-		password: '',
-		database: 'build_db',
-		dialect: 'postgres',
-		schema: 'shard_interview',
-		port: 5432
-	},
-	production: {
-		name: 'production',
-		host: 'localhost',
-		username: 'server-connection-user',
-		password: '',
-		database: 'build_db',
-		dialect: 'postgres',
-		schema: 'shard_interview',
-		port: 5432
-	}
-}
+const Connection = ConnectionOptions[ENV.name]
 
-export const Connection = Database[ENV.name]
+export { Connection, ConnectionOptions }

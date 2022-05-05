@@ -2,13 +2,9 @@ import { Model } from 'sequelize/types'
 
 /* ------------------------- Standard User Interface ------------------------ */
 export interface IUser {
-	id: number
+	id?: number
 	name: string
 	email: string
-	password: string
-	created_at: Date
-	updated_at: Date
-	deleted_at: Date
 }
 
 /* ---------------------------- Method Interfaces --------------------------- */
